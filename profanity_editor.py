@@ -1,4 +1,4 @@
-from urllib.request import urlopen
+import urllib.request
 
 def read_file():
     file_check = open(r"C:\Users\Ajeet\Desktop\python_mini_projects\test.txt")
