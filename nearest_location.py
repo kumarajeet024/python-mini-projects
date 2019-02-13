@@ -1,15 +1,17 @@
-tempDataList = [{'lat': 39.7612992 , 'lon': -86.1519681}, 
-                {"lat": 39.762241, "lon": -86.158436}, 
-                {"lat": 39.7622292, "lon": -86.1578917}]
 
-tempLatList = []
-tempLonList = []
 
-for item in tempDataList:
-    tempLatList.append(item['lat'])
-    tempLonList.append(item['lon'])
+entitieslocation = [{'lat': 28.677419 , 'lon': 77.499774}, 
+                {"lat": 28.635340, "lon": 77.445700}, 
+                {"lat": 28.553905, "lon": 77.099349},
+                {"lat":28.622259, "lon":77.239361 }]
+latlist = []
+longlist = []
 
-closestLatValue = lambda myvalue: min(tempLatList, key=lambda x: abs(x - myvalue))
-closestLonValue = lambda myvalue: min(tempLonList, key=lambda x: abs(x - myvalue))
+for coordinates in entitieslocation:
+    latlist.append(coordinates['lat'])
+    longlist.append(coordinates['lon'])
 
-print(closestLatValue(39.7622290), closestLonValue(-86.1519750))
+nearestlat = lambda userlocation: min(latlist, key=lambda x: abs(x - userlocation))
+nearestlong = lambda userlocation: min(longlist, key=lambda x: abs(x - userlocation))
+
+print(nearestlat(28.540600), nearestlong(77.212967))
